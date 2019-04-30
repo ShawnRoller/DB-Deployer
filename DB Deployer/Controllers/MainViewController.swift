@@ -10,6 +10,7 @@ import Cocoa
 
 class MainViewController: NSViewController {
 
+    let defaultDialogText = "Whatchu want sucka?!"
     @IBOutlet weak var pathTextField: NSTextField!
     @IBOutlet weak var pathButton: NSButton!
     @IBOutlet weak var serverTableView: NSTableView!
@@ -21,6 +22,7 @@ class MainViewController: NSViewController {
         didSet {
             if let url = representedObject as? URL {
                 self.pathTextField.stringValue = "\(url)"
+                self.updateDialog()
             }
         }
     }
@@ -36,6 +38,10 @@ class MainViewController: NSViewController {
         
         // set delegate so we know when the text changes
         self.pathTextField.delegate = self
+        
+        // set defaults
+        self.deployButton.isEnabled = false
+        self.dialogLabel.stringValue = self.defaultDialogText
 
         self.show(preferences: self.preferences)
     }
@@ -46,10 +52,16 @@ class MainViewController: NSViewController {
     
     func updateDialog() {
         let selectedRow = self.serverTableView.selectedRow
-        guard selectedRow >= 0 && selectedRow < self.preferences.dbConfigs.count else { return }
-        
-        let name = self.preferences.dbConfigs[selectedRow].name
         let text = self.pathTextField.stringValue
+        
+        guard selectedRow >= 0 && selectedRow < self.preferences.dbConfigs.count && text.count > 0 else {
+            self.deployButton.isEnabled = false
+            self.dialogLabel.stringValue = self.defaultDialogText
+            return
+        }
+        
+        self.deployButton.isEnabled = true
+        let name = self.preferences.dbConfigs[selectedRow].name
         
         self.dialogLabel.stringValue = "I will deploy all the .sql scripts from \n\(text) \n\nto the database server \n\(name)\n\nShould I proceed?"
     }

@@ -374,10 +374,10 @@ Gw
                                 </textFieldCell>
                             </textField>
                             <stackView distribution="fillEqually" orientation="vertical" alignment="centerX" spacing="25" horizontalStackHuggingPriority="249.99998474121094" verticalStackHuggingPriority="249.99998474121094" detachesHiddenViews="YES" translatesAutoresizingMaskIntoConstraints="NO" id="u8v-4Q-xUp">
-                                <rect key="frame" x="8" y="140" width="1640" height="265"/>
+                                <rect key="frame" x="8" y="141" width="1640" height="264"/>
                                 <subviews>
                                     <stackView distribution="fillEqually" orientation="horizontal" alignment="bottom" spacing="0.0" horizontalStackHuggingPriority="249.99998474121094" verticalStackHuggingPriority="249.99998474121094" detachesHiddenViews="YES" translatesAutoresizingMaskIntoConstraints="NO" id="PI1-ny-dH4">
-                                        <rect key="frame" x="0.0" y="185" width="1640" height="80"/>
+                                        <rect key="frame" x="0.0" y="184" width="1640" height="80"/>
                                         <subviews>
                                             <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="PBL-Qu-LFq">
                                                 <rect key="frame" x="-2" y="0.0" width="824" height="25"/>
@@ -409,10 +409,10 @@ Gw
                                         </customSpacing>
                                     </stackView>
                                     <stackView distribution="fillEqually" orientation="horizontal" alignment="top" spacing="20" horizontalStackHuggingPriority="249.99998474121094" verticalStackHuggingPriority="249.99998474121094" detachesHiddenViews="YES" translatesAutoresizingMaskIntoConstraints="NO" id="2Q8-0R-Jgn">
-                                        <rect key="frame" x="0.0" y="0.0" width="1640" height="160"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="1640" height="159"/>
                                         <subviews>
                                             <stackView distribution="fillEqually" orientation="horizontal" alignment="top" spacing="0.0" horizontalStackHuggingPriority="249.99998474121094" verticalStackHuggingPriority="249.99998474121094" detachesHiddenViews="YES" translatesAutoresizingMaskIntoConstraints="NO" id="rBd-uw-qIo">
-                                                <rect key="frame" x="0.0" y="130" width="1089" height="30"/>
+                                                <rect key="frame" x="0.0" y="129" width="1089" height="30"/>
                                                 <subviews>
                                                     <textField verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="Ayf-uy-75f">
                                                         <rect key="frame" x="0.0" y="0.0" width="1059" height="30"/>
@@ -435,7 +435,7 @@ Gw
                                                             <font key="font" metaFont="system"/>
                                                         </buttonCell>
                                                         <connections>
-                                                            <action selector="pathButtonClicked:" target="XfG-lQ-9wD" id="6Gu-AB-MHL"/>
+                                                            <action selector="openDocument:" target="rPt-NT-nkU" id="Zkk-0R-5lI"/>
                                                         </connections>
                                                     </button>
                                                 </subviews>
@@ -452,7 +452,7 @@ Gw
                                                 </customSpacing>
                                             </stackView>
                                             <scrollView autohidesScrollers="YES" horizontalLineScroll="19" horizontalPageScroll="10" verticalLineScroll="19" verticalPageScroll="10" usesPredominantAxisScrolling="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SV7-f7-v7h">
-                                                <rect key="frame" x="1109" y="40" width="531" height="120"/>
+                                                <rect key="frame" x="1109" y="39" width="531" height="120"/>
                                                 <clipView key="contentView" id="shc-V5-n3u">
                                                     <rect key="frame" x="1" y="0.0" width="529" height="119"/>
                                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -576,24 +576,24 @@ Gw
                                 </customSpacing>
                             </stackView>
                             <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="lZV-nh-mqf">
-                                <rect key="frame" x="737" y="41" width="182" height="46"/>
+                                <rect key="frame" x="743" y="47" width="170" height="37"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="35" id="RQy-ck-hPH"/>
                                     <constraint firstAttribute="width" constant="170" id="hZT-Zp-VXd"/>
                                 </constraints>
-                                <buttonCell key="cell" type="push" title="Button" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="0u4-hg-dGP">
+                                <buttonCell key="cell" type="smallSquare" title="Deploy!" bezelStyle="smallSquare" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="0u4-hg-dGP">
                                     <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
-                                    <font key="font" metaFont="system"/>
+                                    <font key="font" size="22" name="Gotham-Book"/>
                                 </buttonCell>
                                 <connections>
                                     <action selector="deployButtonClicked:" target="XfG-lQ-9wD" id="gqC-A2-c7B"/>
                                 </connections>
                             </button>
                             <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" translatesAutoresizingMaskIntoConstraints="NO" id="i6N-Sd-Pfc">
-                                <rect key="frame" x="18" y="103" width="1620" height="17"/>
-                                <textFieldCell key="cell" selectable="YES" alignment="center" title="Multiline Label" id="Dtq-dE-N7J">
-                                    <font key="font" metaFont="system"/>
-                                    <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                <rect key="frame" x="18" y="103" width="1620" height="18"/>
+                                <textFieldCell key="cell" selectable="YES" alignment="center" title="placeholder" id="Dtq-dE-N7J">
+                                    <font key="font" size="17" name="Gotham-Book"/>
+                                    <color key="textColor" red="0.28435748820000001" green="0.56465464830000001" blue="0.90451699500000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                     <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                                 </textFieldCell>
                             </textField>
