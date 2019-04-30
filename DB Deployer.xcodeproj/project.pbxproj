@@ -8,19 +8,29 @@
 
 /* Begin PBXBuildFile section */
 		295161E322775987009F9408 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 295161E222775987009F9408 /* AppDelegate.swift */; };
-		295161E522775987009F9408 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 295161E422775987009F9408 /* ViewController.swift */; };
+		295161E522775987009F9408 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 295161E422775987009F9408 /* MainViewController.swift */; };
 		295161E722775988009F9408 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 295161E622775988009F9408 /* Assets.xcassets */; };
 		295161EA22775988009F9408 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 295161E822775988009F9408 /* Main.storyboard */; };
+		295161F522776B25009F9408 /* PreferencesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 295161F422776B25009F9408 /* PreferencesViewController.swift */; };
+		295161FA227771B6009F9408 /* DBConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = 295161F9227771B6009F9408 /* DBConfig.swift */; };
+		2951621422778EF6009F9408 /* Preferences.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2951621322778EF6009F9408 /* Preferences.swift */; };
+		2951621622778F94009F9408 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2951621522778F94009F9408 /* Constants.swift */; };
+		295162182277A357009F9408 /* WindowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 295162172277A357009F9408 /* WindowController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		295161DF22775987009F9408 /* DB Deployer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "DB Deployer.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		295161E222775987009F9408 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		295161E422775987009F9408 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		295161E422775987009F9408 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		295161E622775988009F9408 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		295161E922775988009F9408 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		295161EB22775988009F9408 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		295161EC22775988009F9408 /* DB_Deployer.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = DB_Deployer.entitlements; sourceTree = "<group>"; };
+		295161F422776B25009F9408 /* PreferencesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreferencesViewController.swift; sourceTree = "<group>"; };
+		295161F9227771B6009F9408 /* DBConfig.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DBConfig.swift; sourceTree = "<group>"; };
+		2951621322778EF6009F9408 /* Preferences.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Preferences.swift; sourceTree = "<group>"; };
+		2951621522778F94009F9408 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		295162172277A357009F9408 /* WindowController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WindowController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -53,14 +63,43 @@
 		295161E122775987009F9408 /* DB Deployer */ = {
 			isa = PBXGroup;
 			children = (
+				295161F82277713F009F9408 /* Models */,
+				295161F722777130009F9408 /* Controllers */,
+				295161F622777121009F9408 /* Supporting Files */,
 				295161E222775987009F9408 /* AppDelegate.swift */,
-				295161E422775987009F9408 /* ViewController.swift */,
 				295161E622775988009F9408 /* Assets.xcassets */,
 				295161E822775988009F9408 /* Main.storyboard */,
-				295161EB22775988009F9408 /* Info.plist */,
 				295161EC22775988009F9408 /* DB_Deployer.entitlements */,
+				295161EB22775988009F9408 /* Info.plist */,
 			);
 			path = "DB Deployer";
+			sourceTree = "<group>";
+		};
+		295161F622777121009F9408 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				2951621522778F94009F9408 /* Constants.swift */,
+			);
+			path = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		295161F722777130009F9408 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				295161E422775987009F9408 /* MainViewController.swift */,
+				295161F422776B25009F9408 /* PreferencesViewController.swift */,
+				295162172277A357009F9408 /* WindowController.swift */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		295161F82277713F009F9408 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				295161F9227771B6009F9408 /* DBConfig.swift */,
+				2951621322778EF6009F9408 /* Preferences.swift */,
+			);
+			path = Models;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -133,8 +172,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				295161E522775987009F9408 /* ViewController.swift in Sources */,
+				295161E522775987009F9408 /* MainViewController.swift in Sources */,
+				295161FA227771B6009F9408 /* DBConfig.swift in Sources */,
+				2951621422778EF6009F9408 /* Preferences.swift in Sources */,
+				295162182277A357009F9408 /* WindowController.swift in Sources */,
 				295161E322775987009F9408 /* AppDelegate.swift in Sources */,
+				295161F522776B25009F9408 /* PreferencesViewController.swift in Sources */,
+				2951621622778F94009F9408 /* Constants.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
