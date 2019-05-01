@@ -16,6 +16,7 @@
 		2951621422778EF6009F9408 /* Preferences.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2951621322778EF6009F9408 /* Preferences.swift */; };
 		2951621622778F94009F9408 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2951621522778F94009F9408 /* Constants.swift */; };
 		295162182277A357009F9408 /* WindowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 295162172277A357009F9408 /* WindowController.swift */; };
+		29516232227A3736009F9408 /* DeployScript.sh in Resources */ = {isa = PBXBuildFile; fileRef = 29516231227A3736009F9408 /* DeployScript.sh */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -31,6 +32,7 @@
 		2951621322778EF6009F9408 /* Preferences.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Preferences.swift; sourceTree = "<group>"; };
 		2951621522778F94009F9408 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		295162172277A357009F9408 /* WindowController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WindowController.swift; sourceTree = "<group>"; };
+		29516231227A3736009F9408 /* DeployScript.sh */ = {isa = PBXFileReference; lastKnownFileType = text.script.sh; path = DeployScript.sh; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -79,6 +81,7 @@
 			isa = PBXGroup;
 			children = (
 				2951621522778F94009F9408 /* Constants.swift */,
+				29516231227A3736009F9408 /* DeployScript.sh */,
 			);
 			path = "Supporting Files";
 			sourceTree = "<group>";
@@ -161,6 +164,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				295161E722775988009F9408 /* Assets.xcassets in Resources */,
+				29516232227A3736009F9408 /* DeployScript.sh in Resources */,
 				295161EA22775988009F9408 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
