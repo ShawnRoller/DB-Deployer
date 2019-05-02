@@ -10,6 +10,7 @@ import Foundation
 
 struct Constants {
     static let defaultPathKey = "defaultPath"
+    static let sqlPathKey = "sqlPath"
     static let configListKey = "configList"
     static let prefsChanged = "preferencesChanged"
 }

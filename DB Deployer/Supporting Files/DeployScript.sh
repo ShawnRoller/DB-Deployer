@@ -14,7 +14,7 @@ files=$(ls -v1 "${3}"/*.sql)
 for file in $files
 do
     echo executing $file
-    sqlcmd -S "${4}" -d "${5}" -i $file
+"${6}"/sqlcmd -S "${4}" -d "${5}" -i $file
 done
 
 echo "*********************************"

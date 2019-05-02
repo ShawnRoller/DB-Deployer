@@ -8,8 +8,8 @@
 
 import Foundation
 
-struct DBConfig {
-
+struct DBConfig: Codable {
+    
     var name = ""
     var driver = ""
     var server = ""
@@ -18,5 +18,4 @@ struct DBConfig {
     var isValidConfig: Bool {
         return driver.count > 0 && server.count > 0 && database.count > 0
     }
-    
 }

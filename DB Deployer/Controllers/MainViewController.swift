@@ -11,13 +11,17 @@ import Cocoa
 class MainViewController: NSViewController {
 
     let defaultDialogText = "Whatchu want sucka?!"
+    let deployTitle = "Deploy!"
+    let stopTitle = "Cancel"
+    
     @IBOutlet weak var pathControl: NSPathControl!
     @IBOutlet weak var serverTableView: NSTableView!
     @IBOutlet weak var dialogLabel: NSTextView!
     @IBOutlet weak var deployButton: NSButton!
     
     var preferences = Preferences()
-    
+    var deployTask = Process()
+    var isRunning = false
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -28,10 +32,18 @@ class MainViewController: NSViewController {
         self.serverTableView.target = self
         
         // set defaults
-        self.deployButton.isEnabled = false
-        self.dialogLabel.string = self.defaultDialogText
+        self.updateDialog()
+        self.deployButton.title = self.deployTitle
+        
+        // setup listener in case the prefs change
+        NotificationCenter.default.addObserver(self, selector: #selector(updatePrefs(_:)), name: NSNotification.Name(rawValue: Constants.prefsChanged), object: nil)
 
         self.show(preferences: self.preferences)
+    }
+    
+    @objc func updatePrefs(_ sender: Any) {
+        self.preferences = Preferences()
+        self.serverTableView.reloadData()
     }
     
     func show(preferences: Preferences) {
@@ -56,21 +68,30 @@ class MainViewController: NSViewController {
     }
     
     @IBAction func deployButtonClicked(_ sender: Any) {
-        guard let url = self.pathControl.url else { return }
-        let path = url.path
-        self.deployButton.isEnabled = false
-        let selectedConfig = self.preferences.dbConfigs[self.serverTableView.selectedRow]
-        self.buildScript(for: selectedConfig, folder: path)
+        if !self.isRunning {
+            guard let url = self.pathControl.url else { return }
+            
+            self.deployButton.title = self.stopTitle
+            self.isRunning = true
+            
+            let path = url.path
+            let selectedConfig = self.preferences.dbConfigs[self.serverTableView.selectedRow]
+            let sqlcmdPath = self.preferences.sqlPath
+            self.buildScript(for: selectedConfig, folder: path, sqlcmdPath: sqlcmdPath)
+        } else {
+            self.stopButtonClicked(sender)
+        }
     }
     
     @IBAction func deployMenuButtonClicked(_ sender: Any) {
         self.deployButtonClicked(sender)
     }
     
-    @IBAction func stopButtonClicked(_ sender: Any) {
-//        if self.isRunning {
-//            self.buildTask.terminate()
-//        }
+    func stopButtonClicked(_ sender: Any) {
+        if self.isRunning {
+            self.deployTask.terminate()
+            self.addOutput("***** DEPLOYMENT CANCELLED *****")
+        }
     }
     
 }
@@ -78,8 +99,8 @@ class MainViewController: NSViewController {
 // MARK: - Scripting
 extension MainViewController {
     
-    func buildScript(for config: DBConfig, folder: String) {
-        let arguments = ["--login", config.name, folder, config.server, config.database, config.driver, config.trustedConnection ? "-E" : ""]
+    func buildScript(for config: DBConfig, folder: String, sqlcmdPath: String) {
+        let arguments = ["--login", config.name, folder, config.server, config.database, sqlcmdPath]
         self.runScript(arguments: arguments)
     }
     
@@ -91,19 +112,20 @@ extension MainViewController {
                 return
             }
             
-            let deployTask = Process()
-            deployTask.launchPath = path
-            deployTask.arguments = arguments
-            deployTask.terminationHandler = {
+            self.deployTask = Process()
+            self.deployTask.launchPath = path
+            self.deployTask.arguments = arguments
+            self.deployTask.terminationHandler = {
                 task in
                 DispatchQueue.main.async(execute: {
-                    self.deployButton.isEnabled = true
+                    self.deployButton.title = self.deployTitle
+                    self.isRunning = false
                 })
             }
             
-            self.captureStdOut(deployTask)
-            deployTask.launch()
-            deployTask.waitUntilExit()
+            self.captureStdOut(self.deployTask)
+            self.deployTask.launch()
+            self.deployTask.waitUntilExit()
         }
     }
     
@@ -117,15 +139,19 @@ extension MainViewController {
             let outputString = String(data: output, encoding: String.Encoding.utf8) ?? ""
             
             DispatchQueue.main.async(execute: {
-                let previousOutput = self.dialogLabel.string
-                let nextOutput = previousOutput + "\n" + outputString
-                self.dialogLabel.string = nextOutput
-                
-                let range = NSRange(location: nextOutput.count, length: 0)
-                self.dialogLabel.scrollRangeToVisible(range)
+                self.addOutput(outputString)
             })
             outputPipe.fileHandleForReading.waitForDataInBackgroundAndNotify()
         })
+    }
+    
+    func addOutput(_ outputString: String) {
+        let previousOutput = self.dialogLabel.string
+        let nextOutput = previousOutput + "\n" + outputString
+        self.dialogLabel.string = nextOutput
+        
+        let range = NSRange(location: nextOutput.count, length: 0)
+        self.dialogLabel.scrollRangeToVisible(range)
     }
     
 }

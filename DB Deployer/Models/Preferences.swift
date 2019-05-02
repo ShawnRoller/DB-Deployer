@@ -15,7 +15,7 @@ struct Preferences {
             if let path = UserDefaults.standard.object(forKey: Constants.defaultPathKey) as? String {
                 return path
             } else {
-                return "file:///Users/"
+                return "/Users"
             }
         }
         set {
@@ -23,18 +23,36 @@ struct Preferences {
         }
     }
     
-    var dbConfigs: [DBConfig] {
+    var sqlPath: String {
         get {
-            if let configs = UserDefaults.standard.object(forKey: Constants.configListKey) as? [DBConfig] {
-                return configs
+            if let path = UserDefaults.standard.object(forKey: Constants.sqlPathKey) as? String {
+                return path
             } else {
-                let config = DBConfig(name: "test", driver: "test driver", server: "test server", database: "test db", trustedConnection: true)
-                let config1 = DBConfig(name: "abc", driver: "test driver z", server: "z test server", database: "r test db", trustedConnection: false)
-                return [config, config1]
+                return "/Users"
             }
         }
         set {
-            UserDefaults.standard.set(newValue, forKey: Constants.configListKey)
+            UserDefaults.standard.set(newValue, forKey: Constants.sqlPathKey)
+        }
+    }
+    
+    var dbConfigs: [DBConfig] {
+        get {
+            guard let data = UserDefaults.standard.array(forKey: Constants.configListKey) as? [Data] else {
+                print("could not load default configs")
+                return []
+            }
+            
+            do {
+                return try data.map { try JSONDecoder().decode(DBConfig.self, from: $0) }
+            } catch {
+                print("could not load default configs")
+                return []
+            }
+        }
+        set {
+            let data = newValue.map { try? JSONEncoder().encode($0) }
+            UserDefaults.standard.set(data, forKey: Constants.configListKey)
         }
     }
     
