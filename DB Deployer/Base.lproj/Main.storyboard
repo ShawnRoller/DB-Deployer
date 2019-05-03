@@ -24,7 +24,7 @@
                                         <menuItem isSeparatorItem="YES" id="VOq-y0-SEH"/>
                                         <menuItem title="Preferences…" keyEquivalent="," id="BOF-NM-1cW">
                                             <connections>
-                                                <segue destination="Eqk-Df-NWG" kind="show" id="Xbz-Ys-Fwp"/>
+                                                <action selector="openPreferences:" target="Ady-hI-5gd" id="KNu-l3-NdW"/>
                                             </connections>
                                         </menuItem>
                                         <menuItem isSeparatorItem="YES" id="wFC-TO-SCJ"/>
@@ -396,7 +396,7 @@
         <!--Preferences View Controller-->
         <scene sceneID="XHa-zD-C1h">
             <objects>
-                <viewController id="Bxk-MM-bYI" customClass="PreferencesViewController" customModule="DB_Deployer" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="PreferencesViewController" id="Bxk-MM-bYI" customClass="PreferencesViewController" customModule="DB_Deployer" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" misplaced="YES" id="tTO-qU-p1z">
                         <rect key="frame" x="0.0" y="0.0" width="480" height="270"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -628,10 +628,10 @@
                                             <real value="3.4028234663852886e+38"/>
                                         </customSpacing>
                                     </stackView>
-                                    <stackView distribution="equalSpacing" orientation="vertical" alignment="trailing" spacing="0.0" horizontalStackHuggingPriority="249.99998474121094" verticalStackHuggingPriority="249.99998474121094" detachesHiddenViews="YES" translatesAutoresizingMaskIntoConstraints="NO" id="fMz-AI-DPo">
+                                    <stackView distribution="equalSpacing" orientation="horizontal" alignment="bottom" spacing="60" horizontalStackHuggingPriority="249.99998474121094" verticalStackHuggingPriority="249.99998474121094" detachesHiddenViews="YES" translatesAutoresizingMaskIntoConstraints="NO" id="fMz-AI-DPo">
                                         <rect key="frame" x="300" y="0.0" width="210" height="21"/>
                                         <subviews>
-                                            <button hidden="YES" horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="eHw-ec-GU8">
+                                            <button horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="eHw-ec-GU8">
                                                 <rect key="frame" x="-6" y="-7" width="82" height="32"/>
                                                 <buttonCell key="cell" type="push" title="Cancel" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="xaT-M6-RRS">
                                                     <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
@@ -916,6 +916,7 @@ Gw
                         <outlet property="driverTextField" destination="c2r-ub-Lf8" id="mub-xa-5pl"/>
                         <outlet property="nameTextField" destination="Q2T-Tg-dYj" id="Lin-ZJ-nIa"/>
                         <outlet property="serverTextField" destination="jOj-Vk-4cE" id="wts-Hf-wcm"/>
+                        <outlet property="titleLabel" destination="5JI-QX-Rfb" id="3pn-Si-ZNo"/>
                         <outlet property="trustedCheckBox" destination="txd-6h-RHZ" id="Yxy-lc-boS"/>
                     </connections>
                 </viewController>

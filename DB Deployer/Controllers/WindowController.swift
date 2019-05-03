@@ -25,5 +25,10 @@ class WindowController: NSWindowController {
             self.contentViewController?.representedObject = openPanel.url
         }
     }
+    
+    @IBAction func openPreferences(_ sender: AnyObject?) {
+        guard let contentVC = self.contentViewController as? MainViewController else { return }
+        contentVC.openPreferencesSheet()
+    }
 
 }

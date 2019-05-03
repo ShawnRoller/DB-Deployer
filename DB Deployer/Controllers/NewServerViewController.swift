@@ -21,6 +21,7 @@ class NewServerViewController: NSViewController {
     @IBOutlet weak var driverTextField: NSTextField!
     @IBOutlet weak var trustedCheckBox: NSButton!
     @IBOutlet weak var addButton: NSButton!
+    @IBOutlet weak var titleLabel: NSTextField!
     
     public var delegate: NewServerDelegate!
     public var dbConfig: DBConfig?
@@ -38,6 +39,7 @@ class NewServerViewController: NSViewController {
             // populate the fields with the config that is being edited
             self.loadDBConfig(config)
             self.addButton.title = "Save"
+            self.titleLabel.stringValue = "Modify Server"
         }
         
         self.driverTextField.delegate = self

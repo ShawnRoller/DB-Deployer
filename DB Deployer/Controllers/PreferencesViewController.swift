@@ -26,8 +26,6 @@ class PreferencesViewController: NSViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        self.cancelButton.isHidden = true
-        
         // setup tableview
         self.serverTableView.delegate = self
         self.serverTableView.dataSource = self

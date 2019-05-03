@@ -204,3 +204,11 @@ extension MainViewController: NSTableViewDelegate {
     
 }
 
+extension MainViewController {
+    
+    func openPreferencesSheet() {
+        guard let sb = self.storyboard, let vc = sb.instantiateController(withIdentifier: NSStoryboard.SceneIdentifier(stringLiteral: "PreferencesViewController")) as? PreferencesViewController else { return }
+        self.presentAsSheet(vc)
+    }
+    
+}
