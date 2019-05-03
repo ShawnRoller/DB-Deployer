@@ -16,6 +16,7 @@ class PreferencesViewController: NSViewController {
     @IBOutlet weak var deleteServerButton: NSButton!
     @IBOutlet weak var addServerButton: NSButton!
     @IBOutlet weak var saveButton: NSButton!
+    @IBOutlet weak var cancelButton: NSButton!
     
     var preferences = Preferences()
     var tempDBConfigs: [DBConfig] = []
@@ -24,6 +25,8 @@ class PreferencesViewController: NSViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        self.cancelButton.isHidden = true
         
         // setup tableview
         self.serverTableView.delegate = self
@@ -154,6 +157,7 @@ extension PreferencesViewController: NewServerDelegate {
     }
     
     func dismissNewServerModal() {
+        self.editingConfigIndex = -1
         self.closeSheet()
     }
     

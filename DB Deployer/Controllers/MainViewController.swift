@@ -10,7 +10,7 @@ import Cocoa
 
 class MainViewController: NSViewController {
 
-    let defaultDialogText = "Whatchu want sucka?!"
+    let defaultDialogText = "How can I be of service?"
     let deployTitle = "Deploy!"
     let stopTitle = "Cancel"
     
@@ -173,19 +173,6 @@ extension MainViewController: NSTableViewDataSource {
     func tableViewSelectionDidChange(_ notification: Notification) {
         self.updateDialog()
     }
-    
-    //    func tableView(_ tableView: NSTableView, sortDescriptorsDidChange oldDescriptors: [NSSortDescriptor]) {
-    //        guard let sortDescriptor = tableView.sortDescriptors.first else {
-    //            return
-    //        }
-    //
-    //        if let order = Directory.FileOrder(rawValue: sortDescriptor.key!) {
-    //            sortOrder = order
-    //            sortAscending = sortDescriptor.ascending
-    //            reloadFileList()
-    //        }
-    //    }
-    
 }
 
 extension MainViewController: NSTableViewDelegate {

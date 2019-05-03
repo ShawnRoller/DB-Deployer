@@ -37,7 +37,10 @@ class NewServerViewController: NSViewController {
         if let config = self.dbConfig {
             // populate the fields with the config that is being edited
             self.loadDBConfig(config)
+            self.addButton.title = "Save"
         }
+        
+        self.driverTextField.delegate = self
     }
     
     func loadDBConfig(_ dbConfig: DBConfig) {
@@ -57,6 +60,16 @@ class NewServerViewController: NSViewController {
     
     @IBAction func cancelButtonClicked(_ sender: Any) {
         self.delegate.dismissNewServerModal()
+    }
+    
+}
+
+extension NewServerViewController: NSTextFieldDelegate {
+    
+    func controlTextDidEndEditing(_ obj: Notification) {
+        if let userInfo = obj.userInfo, let movement = userInfo["NSTextMovement"] as? Int, movement == 16 {
+            self.addButtonClicked(obj)
+        }
     }
     
 }
