@@ -28,7 +28,7 @@ struct Preferences {
             if let path = UserDefaults.standard.object(forKey: Constants.sqlPathKey) as? String {
                 return path
             } else {
-                return "/Users"
+                return "/usr/local/Cellar/mssql-tools/17.3.1.1/bin"
             }
         }
         set {
