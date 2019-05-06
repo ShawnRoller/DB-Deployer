@@ -338,7 +338,7 @@
                         <outlet property="delegate" destination="Voe-Tx-rLC" id="PrD-fu-P6m"/>
                     </connections>
                 </application>
-                <customObject id="Voe-Tx-rLC" customClass="AppDelegate" customModule="DB_Deployer" customModuleProvider="target">
+                <customObject id="Voe-Tx-rLC" customClass="AppDelegate" customModule="Mega_Deployer" customModuleProvider="target">
                     <connections>
                         <outlet property="deployMenuItem" destination="Ekj-qL-tWF" id="UJ2-w3-zFn"/>
                     </connections>
@@ -351,8 +351,8 @@
         <!--Window Controller-->
         <scene sceneID="R2V-B0-nI4">
             <objects>
-                <windowController id="B8D-0N-5wS" customClass="WindowController" customModule="DB_Deployer" customModuleProvider="target" sceneMemberID="viewController">
-                    <window key="window" title="DB Deployer" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" releasedWhenClosed="NO" visibleAtLaunch="NO" frameAutosaveName="DBDeployerMainWindow" animationBehavior="default" id="IQv-IB-iLA">
+                <windowController id="B8D-0N-5wS" customClass="WindowController" customModule="Mega_Deployer" customModuleProvider="target" sceneMemberID="viewController">
+                    <window key="window" title="Mega Deployer" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" releasedWhenClosed="NO" visibleAtLaunch="NO" frameAutosaveName="DBDeployerMainWindow" animationBehavior="default" id="IQv-IB-iLA">
                         <windowStyleMask key="styleMask" titled="YES" closable="YES" miniaturizable="YES" resizable="YES"/>
                         <windowPositionMask key="initialPositionMask" leftStrut="YES" rightStrut="YES" topStrut="YES" bottomStrut="YES"/>
                         <rect key="contentRect" x="196" y="240" width="500" height="475"/>
@@ -374,7 +374,7 @@
         <!--Window Controller-->
         <scene sceneID="xIf-hc-hV9">
             <objects>
-                <windowController id="Eqk-Df-NWG" customClass="WindowController" customModule="DB_Deployer" customModuleProvider="target" sceneMemberID="viewController">
+                <windowController id="Eqk-Df-NWG" customClass="WindowController" customModule="Mega_Deployer" customModuleProvider="target" sceneMemberID="viewController">
                     <window key="window" title="Preferences" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" releasedWhenClosed="NO" visibleAtLaunch="NO" frameAutosaveName="" animationBehavior="default" id="maf-RM-dP2">
                         <windowStyleMask key="styleMask" titled="YES" closable="YES"/>
                         <rect key="contentRect" x="294" y="313" width="480" height="270"/>
@@ -396,7 +396,7 @@
         <!--Preferences View Controller-->
         <scene sceneID="XHa-zD-C1h">
             <objects>
-                <viewController storyboardIdentifier="PreferencesViewController" id="Bxk-MM-bYI" customClass="PreferencesViewController" customModule="DB_Deployer" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="PreferencesViewController" id="Bxk-MM-bYI" customClass="PreferencesViewController" customModule="Mega_Deployer" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" misplaced="YES" id="tTO-qU-p1z">
                         <rect key="frame" x="0.0" y="0.0" width="480" height="270"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -707,7 +707,7 @@ Gw
         <!--New Server View Controller-->
         <scene sceneID="FKF-qe-mOM">
             <objects>
-                <viewController storyboardIdentifier="NewServerViewController" id="YGe-0v-U4v" customClass="NewServerViewController" customModule="DB_Deployer" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="NewServerViewController" id="YGe-0v-U4v" customClass="NewServerViewController" customModule="Mega_Deployer" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" id="H4p-w7-Jik">
                         <rect key="frame" x="0.0" y="0.0" width="450" height="314"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -927,7 +927,7 @@ Gw
         <!--Main View Controller-->
         <scene sceneID="hIz-AP-VOD">
             <objects>
-                <viewController id="XfG-lQ-9wD" customClass="MainViewController" customModule="DB_Deployer" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="XfG-lQ-9wD" customClass="MainViewController" customModule="Mega_Deployer" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" id="m2S-Jp-Qdl">
                         <rect key="frame" x="0.0" y="0.0" width="2444" height="500"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -1036,7 +1036,7 @@ Gw
                                                     <rect key="frame" x="1" y="103" width="2252" height="16"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                 </scroller>
-                                                <scroller key="verticalScroller" hidden="YES" wantsLayer="YES" verticalHuggingPriority="750" doubleValue="1" horizontal="NO" id="Gsj-Wt-eUh">
+                                                <scroller key="verticalScroller" hidden="YES" wantsLayer="YES" verticalHuggingPriority="750" horizontal="NO" id="Gsj-Wt-eUh">
                                                     <rect key="frame" x="224" y="17" width="15" height="102"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                 </scroller>
@@ -1127,6 +1127,20 @@ Gw
                                     <action selector="deployButtonClicked:" target="XfG-lQ-9wD" id="gqC-A2-c7B"/>
                                 </connections>
                             </button>
+                            <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="zh3-He-rX1">
+                                <rect key="frame" x="2399" y="454" width="25" height="27"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="25" id="CxP-94-G6w"/>
+                                    <constraint firstAttribute="height" constant="25" id="TJX-Sh-Yrd"/>
+                                </constraints>
+                                <buttonCell key="cell" type="smallSquare" bezelStyle="smallSquare" image="NSAdvanced" imagePosition="overlaps" alignment="center" lineBreakMode="truncatingTail" state="on" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="CnV-nm-zRR">
+                                    <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                    <font key="font" metaFont="system"/>
+                                </buttonCell>
+                                <connections>
+                                    <action selector="openPreferences:" target="rPt-NT-nkU" id="N9D-2F-1f0"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <constraints>
                             <constraint firstItem="u8v-4Q-xUp" firstAttribute="centerX" secondItem="m2S-Jp-Qdl" secondAttribute="centerX" id="5gF-Ox-rv2"/>
@@ -1135,7 +1149,9 @@ Gw
                             <constraint firstAttribute="bottom" secondItem="lZV-nh-mqf" secondAttribute="bottom" constant="20" id="9xn-h6-B6v"/>
                             <constraint firstAttribute="trailing" secondItem="u8v-4Q-xUp" secondAttribute="trailing" constant="20" id="Jmp-g8-xHQ"/>
                             <constraint firstItem="gak-1R-dc7" firstAttribute="top" secondItem="m2S-Jp-Qdl" secondAttribute="top" id="K4B-Sr-Suq"/>
+                            <constraint firstItem="zh3-He-rX1" firstAttribute="top" secondItem="m2S-Jp-Qdl" secondAttribute="top" constant="20" id="N5N-pH-aW2"/>
                             <constraint firstItem="wKE-cj-5oy" firstAttribute="centerX" secondItem="m2S-Jp-Qdl" secondAttribute="centerX" id="ZE9-4a-ImZ"/>
+                            <constraint firstAttribute="trailing" secondItem="zh3-He-rX1" secondAttribute="trailing" constant="20" id="a9m-Vl-ZgO"/>
                             <constraint firstAttribute="trailing" secondItem="uF3-Lu-7An" secondAttribute="trailing" constant="20" id="f9g-oR-bb0"/>
                             <constraint firstItem="u8v-4Q-xUp" firstAttribute="leading" secondItem="m2S-Jp-Qdl" secondAttribute="leading" constant="20" id="kMl-1t-T9n"/>
                             <constraint firstItem="gak-1R-dc7" firstAttribute="leading" secondItem="m2S-Jp-Qdl" secondAttribute="leading" id="kdP-qK-SRo"/>
@@ -1160,6 +1176,7 @@ Gw
     <resources>
         <image name="MegaDeployerIcon" width="512" height="512"/>
         <image name="NSAddTemplate" width="11" height="11"/>
+        <image name="NSAdvanced" width="32" height="32"/>
         <image name="NSRemoveTemplate" width="11" height="11"/>
     </resources>
 </document>

@@ -10,7 +10,7 @@ import Cocoa
 
 class MainViewController: NSViewController {
 
-    let defaultDialogText = "How can I be of service?"
+    let defaultDialogText = "What do you want to deploy?"
     let deployTitle = "Deploy!"
     let stopTitle = "Cancel"
     
@@ -25,7 +25,7 @@ class MainViewController: NSViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        s
         // setup tableview
         self.serverTableView.delegate = self
         self.serverTableView.dataSource = self
@@ -64,7 +64,7 @@ class MainViewController: NSViewController {
         self.deployButton.isEnabled = true
         let name = self.preferences.dbConfigs[selectedRow].name
         
-        self.dialogLabel.string = "I will deploy all the .sql scripts from \n\(text) \n\nto the database server \n\(name)\n\nShould I proceed?"
+        self.dialogLabel.string = "I will deploy all the .sql scripts from \n\(text) \n\nto the database server \n\(name)\n\nDo you want to deploy?"
     }
     
     @IBAction func deployButtonClicked(_ sender: Any) {

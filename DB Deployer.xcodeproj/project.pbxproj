@@ -18,10 +18,11 @@
 		295162182277A357009F9408 /* WindowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 295162172277A357009F9408 /* WindowController.swift */; };
 		29516232227A3736009F9408 /* DeployScript.sh in Resources */ = {isa = PBXBuildFile; fileRef = 29516231227A3736009F9408 /* DeployScript.sh */; };
 		29516234227B5EB8009F9408 /* NewServerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29516233227B5EB8009F9408 /* NewServerViewController.swift */; };
+		29A1C1652280755D003A5DCC /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 295161EB22775988009F9408 /* Info.plist */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		295161DF22775987009F9408 /* DB Deployer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "DB Deployer.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		295161DF22775987009F9408 /* Mega Deployer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Mega Deployer.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		295161E222775987009F9408 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		295161E422775987009F9408 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		295161E622775988009F9408 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -59,7 +60,7 @@
 		295161E022775987009F9408 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				295161DF22775987009F9408 /* DB Deployer.app */,
+				295161DF22775987009F9408 /* Mega Deployer.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -125,7 +126,7 @@
 			);
 			name = "DB Deployer";
 			productName = "DB Deployer";
-			productReference = 295161DF22775987009F9408 /* DB Deployer.app */;
+			productReference = 295161DF22775987009F9408 /* Mega Deployer.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -171,6 +172,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				29A1C1652280755D003A5DCC /* Info.plist in Resources */,
 				295161E722775988009F9408 /* Assets.xcassets in Resources */,
 				29516232227A3736009F9408 /* DeployScript.sh in Resources */,
 				295161EA22775988009F9408 /* Main.storyboard in Resources */,
@@ -337,7 +339,7 @@
 					"@executable_path/../Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "com.offensively-bad.DB-Deployer";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = "Mega Deployer";
 				SWIFT_VERSION = 5.0;
 			};
 			name = Debug;
@@ -355,7 +357,7 @@
 					"@executable_path/../Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "com.offensively-bad.DB-Deployer";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = "Mega Deployer";
 				SWIFT_VERSION = 5.0;
 			};
 			name = Release;
