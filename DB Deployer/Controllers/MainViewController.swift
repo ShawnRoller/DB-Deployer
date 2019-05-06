@@ -25,7 +25,7 @@ class MainViewController: NSViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        s
+        
         // setup tableview
         self.serverTableView.delegate = self
         self.serverTableView.dataSource = self
