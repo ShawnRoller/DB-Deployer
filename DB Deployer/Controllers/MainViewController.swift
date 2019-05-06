@@ -94,6 +94,10 @@ class MainViewController: NSViewController {
         }
     }
     
+    @IBAction func pathSelected(_ sender: Any) {
+        self.updateDialog()
+    }
+    
 }
 
 // MARK: - Scripting

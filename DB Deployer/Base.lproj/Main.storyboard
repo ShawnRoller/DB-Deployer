@@ -1051,6 +1051,9 @@ Gw
                                                     <font key="font" metaFont="system"/>
                                                     <url key="url" string="file://localhost/Applications/"/>
                                                 </pathCell>
+                                                <connections>
+                                                    <action selector="pathSelected:" target="XfG-lQ-9wD" id="ppQ-yo-6qH"/>
+                                                </connections>
                                             </pathControl>
                                         </subviews>
                                         <visibilityPriorities>

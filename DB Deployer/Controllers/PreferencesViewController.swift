@@ -53,6 +53,10 @@ class PreferencesViewController: NSViewController {
         self.preferences.sqlPath = self.sqlPathControl.url?.path ?? "/"
         self.preferences.dbConfigs = self.tempDBConfigs
         NotificationCenter.default.post(name: Notification.Name(rawValue: Constants.prefsChanged), object: nil)
+        
+        // Close the window
+        guard let window = self.view.window else { return }
+        window.close()
     }
     
     @IBAction func cancelButtonClicked(_ sender: Any) {
@@ -88,18 +92,6 @@ extension PreferencesViewController: NSTableViewDataSource {
     func numberOfRows(in tableView: NSTableView) -> Int {
         return self.tempDBConfigs.count
     }
-    
-//    func tableView(_ tableView: NSTableView, sortDescriptorsDidChange oldDescriptors: [NSSortDescriptor]) {
-//        guard let sortDescriptor = tableView.sortDescriptors.first else {
-//            return
-//        }
-//
-//        if let order = Directory.FileOrder(rawValue: sortDescriptor.key!) {
-//            sortOrder = order
-//            sortAscending = sortDescriptor.ascending
-//            reloadFileList()
-//        }
-//    }
     
 }
 
