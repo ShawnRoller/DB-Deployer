@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/bash
 
 #  DeployScript.sh
 #  DB Deployer
@@ -8,13 +8,14 @@
 echo "*********************************"
 echo "Beginning deploy to ${2}"
 echo "*********************************"
-
+IFS=$'\n'
 files=$(ls -v1 "${3}"/*.sql)
 
 for file in $files
 do
     echo executing $file
-"${6}"/sqlcmd -S "${4}" -d "${5}" -i $file
+    "${6}"/sqlcmd -S "${4}" -d "${5}" -i $file
+    command
 done
 
 echo "*********************************"

@@ -137,6 +137,7 @@ extension MainViewController {
         // setup output
         let outputPipe = Pipe()
         task.standardOutput = outputPipe
+        task.standardError = outputPipe
         outputPipe.fileHandleForReading.waitForDataInBackgroundAndNotify()
         NotificationCenter.default.addObserver(forName: NSNotification.Name.NSFileHandleDataAvailable, object: outputPipe.fileHandleForReading, queue: nil, using: { (notification) in
             let output = outputPipe.fileHandleForReading.availableData

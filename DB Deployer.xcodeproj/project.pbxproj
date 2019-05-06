@@ -36,6 +36,7 @@
 		295162172277A357009F9408 /* WindowController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WindowController.swift; sourceTree = "<group>"; };
 		29516231227A3736009F9408 /* DeployScript.sh */ = {isa = PBXFileReference; lastKnownFileType = text.script.sh; path = DeployScript.sh; sourceTree = "<group>"; };
 		29516233227B5EB8009F9408 /* NewServerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewServerViewController.swift; sourceTree = "<group>"; };
+		297AD43B22809EA400328B53 /* Mega Deployer.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "Mega Deployer.entitlements"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -68,6 +69,7 @@
 		295161E122775987009F9408 /* DB Deployer */ = {
 			isa = PBXGroup;
 			children = (
+				297AD43B22809EA400328B53 /* Mega Deployer.entitlements */,
 				295161F82277713F009F9408 /* Models */,
 				295161F722777130009F9408 /* Controllers */,
 				295161F622777121009F9408 /* Supporting Files */,
