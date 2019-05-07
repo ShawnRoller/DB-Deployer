@@ -1145,6 +1145,13 @@ Gw
                                     <action selector="openPreferences:" target="rPt-NT-nkU" id="N9D-2F-1f0"/>
                                 </connections>
                             </button>
+                            <progressIndicator wantsLayer="YES" horizontalHuggingPriority="750" verticalHuggingPriority="750" maxValue="100" bezeled="NO" indeterminate="YES" controlSize="small" style="spinning" translatesAutoresizingMaskIntoConstraints="NO" id="wNM-P1-ak4">
+                                <rect key="frame" x="2408" y="184" width="16" height="16"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="16" id="bI7-cf-nWn"/>
+                                    <constraint firstAttribute="width" secondItem="wNM-P1-ak4" secondAttribute="height" multiplier="1:1" id="yDl-Vh-jyB"/>
+                                </constraints>
+                            </progressIndicator>
                         </subviews>
                         <constraints>
                             <constraint firstItem="u8v-4Q-xUp" firstAttribute="centerX" secondItem="m2S-Jp-Qdl" secondAttribute="centerX" id="5gF-Ox-rv2"/>
@@ -1156,7 +1163,9 @@ Gw
                             <constraint firstItem="zh3-He-rX1" firstAttribute="top" secondItem="m2S-Jp-Qdl" secondAttribute="top" constant="20" id="N5N-pH-aW2"/>
                             <constraint firstItem="wKE-cj-5oy" firstAttribute="centerX" secondItem="m2S-Jp-Qdl" secondAttribute="centerX" id="ZE9-4a-ImZ"/>
                             <constraint firstAttribute="trailing" secondItem="zh3-He-rX1" secondAttribute="trailing" constant="20" id="a9m-Vl-ZgO"/>
+                            <constraint firstItem="wNM-P1-ak4" firstAttribute="leading" secondItem="uF3-Lu-7An" secondAttribute="trailing" constant="-16" id="cGn-63-IND"/>
                             <constraint firstAttribute="trailing" secondItem="uF3-Lu-7An" secondAttribute="trailing" constant="20" id="f9g-oR-bb0"/>
+                            <constraint firstItem="uF3-Lu-7An" firstAttribute="top" secondItem="wNM-P1-ak4" secondAttribute="bottom" constant="-16" id="hej-LM-9Mv"/>
                             <constraint firstItem="u8v-4Q-xUp" firstAttribute="leading" secondItem="m2S-Jp-Qdl" secondAttribute="leading" constant="20" id="kMl-1t-T9n"/>
                             <constraint firstItem="gak-1R-dc7" firstAttribute="leading" secondItem="m2S-Jp-Qdl" secondAttribute="leading" id="kdP-qK-SRo"/>
                             <constraint firstItem="u8v-4Q-xUp" firstAttribute="top" secondItem="wKE-cj-5oy" secondAttribute="bottom" id="lVt-B4-moK"/>
@@ -1169,6 +1178,7 @@ Gw
                         <outlet property="deployButton" destination="lZV-nh-mqf" id="Mmv-Go-J8o"/>
                         <outlet property="dialogLabel" destination="gyj-6m-2Hr" id="bsG-M4-YP7"/>
                         <outlet property="pathControl" destination="quj-Hs-e2X" id="hY1-Z1-pWk"/>
+                        <outlet property="progressIndicator" destination="wNM-P1-ak4" id="Duf-4h-sD5"/>
                         <outlet property="serverTableView" destination="XGj-mN-5z3" id="Xra-Ds-Olu"/>
                     </connections>
                 </viewController>

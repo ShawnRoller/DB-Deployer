@@ -13,15 +13,27 @@ class MainViewController: NSViewController {
     let defaultDialogText = "What do you want to deploy?"
     let deployTitle = "Deploy!"
     let stopTitle = "Cancel"
+    let maxTFCharacters = 10000
     
     @IBOutlet weak var pathControl: NSPathControl!
     @IBOutlet weak var serverTableView: NSTableView!
     @IBOutlet weak var dialogLabel: NSTextView!
     @IBOutlet weak var deployButton: NSButton!
+    @IBOutlet weak var progressIndicator: NSProgressIndicator!
     
     var preferences = Preferences()
     var deployTask = Process()
-    var isRunning = false
+    var isRunning = false {
+        didSet {
+            if self.isRunning {
+                self.progressIndicator.startAnimation(nil)
+                self.progressIndicator.isHidden = false
+            } else {
+                self.progressIndicator.stopAnimation(nil)
+                self.progressIndicator.isHidden = true
+            }
+        }
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -34,6 +46,8 @@ class MainViewController: NSViewController {
         // set defaults
         self.updateDialog()
         self.deployButton.title = self.deployTitle
+        self.progressIndicator.stopAnimation(nil)
+        self.isRunning = false
         
         // setup listener in case the prefs change
         NotificationCenter.default.addObserver(self, selector: #selector(updatePrefs(_:)), name: NSNotification.Name(rawValue: Constants.prefsChanged), object: nil)
@@ -109,14 +123,14 @@ extension MainViewController {
     }
     
     func runScript(arguments: [String]) {
-        let taskQueue = DispatchQueue.global(qos: DispatchQoS.QoSClass.background)
+        let taskQueue = DispatchQueue.global(qos: DispatchQoS.QoSClass.userInitiated)
         taskQueue.async {
             guard let path = Bundle.main.path(forResource: "DeployScript", ofType: "sh") else {
                 print("can't find build script")
                 return
             }
             
-            self.deployTask = Process()
+            self.deployTask = Process.init()
             self.deployTask.launchPath = path
             self.deployTask.arguments = arguments
             self.deployTask.terminationHandler = {
@@ -129,7 +143,9 @@ extension MainViewController {
             
             self.captureStdOut(self.deployTask)
             self.deployTask.launch()
-            self.deployTask.waitUntilExit()
+            DispatchQueue.global().async {
+                self.deployTask.waitUntilExit()
+            }
         }
     }
     
@@ -151,11 +167,24 @@ extension MainViewController {
     }
     
     func addOutput(_ outputString: String) {
-        let previousOutput = self.dialogLabel.string
-        let nextOutput = previousOutput + "\n" + outputString
-        self.dialogLabel.string = nextOutput
-        
-        let range = NSRange(location: nextOutput.count, length: 0)
+        guard let textStorage = self.dialogLabel.textStorage else { return }
+        if textStorage.length > self.maxTFCharacters {
+            self.truncateOutput()
+        }
+        let outputWithReturn = "\n\(outputString)"
+        textStorage.beginEditing()
+        textStorage.replaceCharacters(in: NSRange(location: textStorage.length, length: 0), with: outputWithReturn)
+        textStorage.endEditing()
+        let range = NSRange(location: textStorage.length, length: 0)
+        self.dialogLabel.scrollRangeToVisible(range)
+    }
+    
+    func truncateOutput() {
+        guard let textStorage = self.dialogLabel.textStorage, textStorage.length > self.maxTFCharacters else { return }
+        textStorage.beginEditing()
+        textStorage.replaceCharacters(in: NSRange(location: 0, length: self.maxTFCharacters), with: "")
+        textStorage.endEditing()
+        let range = NSRange(location: textStorage.length, length: 0)
         self.dialogLabel.scrollRangeToVisible(range)
     }
     
@@ -164,6 +193,11 @@ extension MainViewController {
 extension MainViewController: NSTextFieldDelegate {
     
     func controlTextDidChange(_ obj: Notification) {
+        guard let object = obj.object as? NSTextField else { return }
+        if object.stringValue.count > self.maxTFCharacters {
+            // limit the text output characters so we don't lock up the app
+            self.truncateOutput()
+        }
         self.updateDialog()
     }
     
