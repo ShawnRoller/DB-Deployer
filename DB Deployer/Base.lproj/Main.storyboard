@@ -933,7 +933,7 @@ Gw
                         <rect key="frame" x="0.0" y="0.0" width="2444" height="500"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <subviews>
-                            <imageView horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="gak-1R-dc7">
+                            <imageView hidden="YES" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="gak-1R-dc7">
                                 <rect key="frame" x="0.0" y="305" width="195" height="195"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="195" id="XeT-vY-Jvr"/>
