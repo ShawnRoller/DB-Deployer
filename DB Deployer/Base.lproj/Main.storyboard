@@ -630,7 +630,7 @@
                                         </customSpacing>
                                     </stackView>
                                     <stackView distribution="equalSpacing" orientation="horizontal" alignment="bottom" spacing="60" horizontalStackHuggingPriority="249.99998474121094" verticalStackHuggingPriority="249.99998474121094" detachesHiddenViews="YES" translatesAutoresizingMaskIntoConstraints="NO" id="fMz-AI-DPo">
-                                        <rect key="frame" x="300" y="0.0" width="210" height="21"/>
+                                        <rect key="frame" x="20" y="0.0" width="490" height="21"/>
                                         <subviews>
                                             <button horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="eHw-ec-GU8">
                                                 <rect key="frame" x="-6" y="-7" width="82" height="32"/>
@@ -646,19 +646,17 @@ Gw
                                                 </connections>
                                             </button>
                                             <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="0Hf-4k-vTu">
-                                                <rect key="frame" x="146" y="-7" width="70" height="32"/>
+                                                <rect key="frame" x="426" y="-7" width="70" height="32"/>
                                                 <buttonCell key="cell" type="push" title="Save" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="Sfp-gb-AG3">
                                                     <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                                                     <font key="font" metaFont="system"/>
                                                 </buttonCell>
+                                                <color key="contentTintColor" red="0.28435748820000001" green="0.56465464830000001" blue="0.90451699500000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <connections>
                                                     <action selector="saveButtonClicked:" target="Bxk-MM-bYI" id="vfr-6w-vrG"/>
                                                 </connections>
                                             </button>
                                         </subviews>
-                                        <constraints>
-                                            <constraint firstAttribute="width" constant="210" id="aih-RC-tq8"/>
-                                        </constraints>
                                         <visibilityPriorities>
                                             <integer value="1000"/>
                                             <integer value="1000"/>
@@ -673,6 +671,7 @@ Gw
                                     <constraint firstAttribute="trailing" secondItem="fMz-AI-DPo" secondAttribute="trailing" constant="20" id="T8k-wz-ytS"/>
                                     <constraint firstAttribute="trailing" secondItem="Y5c-sw-OnE" secondAttribute="trailing" constant="20" id="Ys1-rv-xb1"/>
                                     <constraint firstItem="Y5c-sw-OnE" firstAttribute="leading" secondItem="oCi-DP-ie4" secondAttribute="leading" constant="20" id="i0E-rA-crI"/>
+                                    <constraint firstItem="fMz-AI-DPo" firstAttribute="leading" secondItem="oCi-DP-ie4" secondAttribute="leading" constant="20" id="pTr-Vd-QU6"/>
                                     <constraint firstItem="Y5c-sw-OnE" firstAttribute="top" secondItem="oCi-DP-ie4" secondAttribute="top" constant="20" id="s13-Uz-UCN"/>
                                 </constraints>
                                 <visibilityPriorities>
@@ -933,7 +932,7 @@ Gw
                         <rect key="frame" x="0.0" y="0.0" width="2444" height="500"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <subviews>
-                            <imageView hidden="YES" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="gak-1R-dc7">
+                            <imageView horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="gak-1R-dc7">
                                 <rect key="frame" x="0.0" y="305" width="195" height="195"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="195" id="XeT-vY-Jvr"/>
