@@ -21,6 +21,7 @@ class PreferencesViewController: NSViewController {
     var preferences = Preferences()
     var tempDBConfigs: [DBConfig] = []
     var tempPath: String = ""
+    var tempSQLPath: String = ""
     var editingConfigIndex = -1
     
     override func viewDidLoad() {
@@ -42,6 +43,7 @@ class PreferencesViewController: NSViewController {
     func loadTempPrefs(from preferences: Preferences) {
         self.tempDBConfigs = preferences.dbConfigs
         self.tempPath = preferences.defaultPath
+        self.tempSQLPath = preferences.sqlPath
     }
     
     func show(preferences: Preferences) {
