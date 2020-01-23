@@ -46,6 +46,7 @@ class PreferencesViewController: NSViewController {
     
     func show(preferences: Preferences) {
         self.defaultPathControl.url = URL(fileURLWithPath: preferences.defaultPath)
+        self.sqlPathControl.url = URL(fileURLWithPath: preferences.sqlPath)
     }
     
     @IBAction func saveButtonClicked(_ sender: Any) {
