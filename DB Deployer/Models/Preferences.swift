@@ -19,6 +19,7 @@ struct Preferences {
             }
         }
         set {
+            print("updating to new path: \(newValue)")
             UserDefaults.standard.set(newValue, forKey: Constants.defaultPathKey)
         }
     }

@@ -17,7 +17,7 @@ class MainViewController: NSViewController {
     
     @IBOutlet weak var pathControl: NSPathControl!
     @IBOutlet weak var serverTableView: NSTableView!
-    @IBOutlet weak var dialogLabel: NSTextView!
+    @IBOutlet var dialogLabel: NSTextView!
     @IBOutlet weak var deployButton: NSButton!
     @IBOutlet weak var progressIndicator: NSProgressIndicator!
     
@@ -42,6 +42,9 @@ class MainViewController: NSViewController {
         self.serverTableView.delegate = self
         self.serverTableView.dataSource = self
         self.serverTableView.target = self
+        
+        // set the default path
+        self.show(preferences: self.preferences)
         
         // set defaults
         self.updateDialog()
@@ -69,6 +72,9 @@ class MainViewController: NSViewController {
         guard let url = self.pathControl.url else { return }
         let text = url.path
         
+        // Update default path
+        self.updateDefaultPath(newPath: text)
+        
         guard selectedRow >= 0 && selectedRow < self.preferences.dbConfigs.count && text.count > 0 else {
             self.deployButton.isEnabled = false
             self.dialogLabel.string = self.defaultDialogText
@@ -79,6 +85,11 @@ class MainViewController: NSViewController {
         let name = self.preferences.dbConfigs[selectedRow].name
         
         self.dialogLabel.string = "I will deploy all the .sql scripts from \n\(text) \n\nto the database server \n\(name)\n\nDo you want to deploy?"
+    }
+    
+    func updateDefaultPath(newPath: String) {
+        self.preferences.defaultPath = newPath
+        NotificationCenter.default.post(name: Notification.Name(rawValue: Constants.prefsChanged), object: nil)
     }
     
     @IBAction func deployButtonClicked(_ sender: Any) {
