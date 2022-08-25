@@ -11,11 +11,10 @@ import Foundation
 struct DBConfig: Codable {
     
     var name = ""
-    var driver = ""
     var server = ""
     var database = ""
     var trustedConnection = false
     var isValidConfig: Bool {
-        return driver.count > 0 && server.count > 0 && database.count > 0
+        return server.count > 0 && database.count > 0
     }
 }

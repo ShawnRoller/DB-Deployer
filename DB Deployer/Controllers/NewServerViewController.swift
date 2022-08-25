@@ -18,7 +18,6 @@ class NewServerViewController: NSViewController {
     @IBOutlet weak var nameTextField: NSTextField!
     @IBOutlet weak var serverTextField: NSTextField!
     @IBOutlet weak var databaseTextField: NSTextField!
-    @IBOutlet weak var driverTextField: NSTextField!
     @IBOutlet weak var trustedCheckBox: NSButton!
     @IBOutlet weak var addButton: NSButton!
     @IBOutlet weak var titleLabel: NSTextField!
@@ -41,20 +40,17 @@ class NewServerViewController: NSViewController {
             self.addButton.title = "Save"
             self.titleLabel.stringValue = "Modify Server"
         }
-        
-        self.driverTextField.delegate = self
     }
     
     func loadDBConfig(_ dbConfig: DBConfig) {
         self.nameTextField.stringValue = dbConfig.name
         self.serverTextField.stringValue = dbConfig.server
         self.databaseTextField.stringValue = dbConfig.database
-        self.driverTextField.stringValue = dbConfig.driver
         self.trustedCheckBox.state = dbConfig.trustedConnection ? NSControl.StateValue.on : NSControl.StateValue.off
     }
     
     @IBAction func addButtonClicked(_ sender: Any) {
-        self.dbConfig = DBConfig(name: self.nameTextField.stringValue, driver: self.driverTextField.stringValue, server: self.serverTextField.stringValue, database: self.databaseTextField.stringValue, trustedConnection: self.trustedCheckBox.state == NSControl.StateValue.on ? true : false)
+        self.dbConfig = DBConfig(name: self.nameTextField.stringValue, server: self.serverTextField.stringValue, database: self.databaseTextField.stringValue, trustedConnection: self.trustedCheckBox.state == NSControl.StateValue.on ? true : false)
         
         guard let config = self.dbConfig, config.isValidConfig else { return }
         self.delegate.saveConfig(config)

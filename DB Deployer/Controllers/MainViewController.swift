@@ -129,7 +129,13 @@ class MainViewController: NSViewController {
 extension MainViewController {
     
     func buildScript(for config: DBConfig, folder: String, sqlcmdPath: String) {
-        let arguments = ["--login", config.name, folder, config.server, config.database, sqlcmdPath]
+        var isDebug = false
+        
+        #if DEBUG
+            isDebug = true
+        #endif
+        
+        let arguments = ["--login", config.name, folder, config.server, config.database, sqlcmdPath, "\(isDebug)"]
         self.runScript(arguments: arguments)
     }
     
@@ -237,8 +243,6 @@ extension MainViewController: NSTableViewDelegate {
         switch id {
         case "Name":
             cellTitle = config.name
-        case "Driver":
-            cellTitle = config.driver
         case "Server":
             cellTitle = config.server
         case "Database":

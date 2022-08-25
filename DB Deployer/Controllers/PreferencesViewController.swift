@@ -38,6 +38,10 @@ class PreferencesViewController: NSViewController {
         
         // show the prefs
         self.show(preferences: self.preferences)
+        
+        // allow only folders to be selected for the path
+        self.sqlPathControl.allowedTypes = ["public.folder"]
+        self.defaultPathControl.allowedTypes = ["public.folder"]
     }
     
     func loadTempPrefs(from preferences: Preferences) {
@@ -110,8 +114,6 @@ extension PreferencesViewController: NSTableViewDelegate {
         switch id {
             case "Name":
                 cellTitle = config.name
-            case "Driver":
-                cellTitle = config.driver
             case "Server":
                 cellTitle = config.server
             case "Database":
