@@ -14,6 +14,12 @@ files=$(ls -v1 "${3}"/*.sql)
 for file in $files
 do
     echo executing $file
+    if [ "$7" = "true" ]
+        then
+            echo "********* DEBUG *********"
+            echo "${6}"/sqlcmd -S "${4}" -d "${5}" -i $file
+            echo "********* END DEBUG *********"
+    fi
     "${6}"/sqlcmd -S "${4}" -d "${5}" -i $file
     command
 done
