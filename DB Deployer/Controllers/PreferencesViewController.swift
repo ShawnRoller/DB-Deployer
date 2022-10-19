@@ -118,8 +118,6 @@ extension PreferencesViewController: NSTableViewDelegate {
                 cellTitle = config.server
             case "Database":
                 cellTitle = config.database
-            case "Trusted":
-                cellTitle = config.trustedConnection ? "Yes" : "No"
             default:
                 break
         }

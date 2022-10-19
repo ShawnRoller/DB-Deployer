@@ -13,7 +13,6 @@ struct DBConfig: Codable {
     var name = ""
     var server = ""
     var database = ""
-    var trustedConnection = false
     var isValidConfig: Bool {
         return server.count > 0 && database.count > 0
     }

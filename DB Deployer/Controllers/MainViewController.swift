@@ -45,14 +45,15 @@ class MainViewController: NSViewController {
         self.serverTableView.dataSource = self
         self.serverTableView.target = self
         
-        // set the default path
-        self.show(preferences: self.preferences)
-        
         // set defaults
         self.updateDialog()
         self.deployButton.title = self.deployTitle
         self.progressIndicator.stopAnimation(nil)
         self.isRunning = false
+        
+        // configure folder selection
+        self.pathControl.pathStyle = .popUp
+        self.pathControl.allowedTypes = ["public.folder"]
         
         // setup listener in case the prefs change
         self.prefsObserver = NotificationCenter.default.addObserver(self, selector: #selector(updatePrefs(_:)), name: NSNotification.Name(rawValue: Constants.prefsChanged), object: nil)
@@ -262,8 +263,6 @@ extension MainViewController: NSTableViewDelegate {
             cellTitle = config.server
         case "Database":
             cellTitle = config.database
-        case "Trusted":
-            cellTitle = config.trustedConnection ? "Yes" : "No"
         default:
             break
         }

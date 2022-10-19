@@ -22,6 +22,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		290123EC29008BD200B394BE /* DB Deployer.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "DB Deployer.entitlements"; sourceTree = "<group>"; };
 		295161DF22775987009F9408 /* Mega Deployer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Mega Deployer.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		295161E222775987009F9408 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		295161E422775987009F9408 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
@@ -69,6 +70,7 @@
 		295161E122775987009F9408 /* DB Deployer */ = {
 			isa = PBXGroup;
 			children = (
+				290123EC29008BD200B394BE /* DB Deployer.entitlements */,
 				297AD43B22809EA400328B53 /* Mega Deployer.entitlements */,
 				295161F82277713F009F9408 /* Models */,
 				295161F722777130009F9408 /* Controllers */,
@@ -332,16 +334,19 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = "DB Deployer/DB Deployer.entitlements";
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				DEVELOPMENT_TEAM = EWH85CQYYJ;
+				ENABLE_HARDENED_RUNTIME = NO;
 				INFOPLIST_FILE = "DB Deployer/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/../Frameworks",
 				);
 				MACOSX_DEPLOYMENT_TARGET = 10.11;
+				MARKETING_VERSION = 1.2.0;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.offensively-bad.DB-Deployer";
 				PRODUCT_NAME = "Mega Deployer";
 				PROVISIONING_PROFILE_SPECIFIER = "";
@@ -353,16 +358,19 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = "DB Deployer/DB Deployer.entitlements";
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				DEVELOPMENT_TEAM = EWH85CQYYJ;
+				ENABLE_HARDENED_RUNTIME = NO;
 				INFOPLIST_FILE = "DB Deployer/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/../Frameworks",
 				);
 				MACOSX_DEPLOYMENT_TARGET = 10.11;
+				MARKETING_VERSION = 1.2.0;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.offensively-bad.DB-Deployer";
 				PRODUCT_NAME = "Mega Deployer";
 				PROVISIONING_PROFILE_SPECIFIER = "";
