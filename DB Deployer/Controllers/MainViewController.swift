@@ -34,6 +34,7 @@ class MainViewController: NSViewController {
             }
         }
     }
+    var outputObserver: Any? = nil
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -172,7 +173,13 @@ extension MainViewController {
         task.standardOutput = outputPipe
         task.standardError = outputPipe
         outputPipe.fileHandleForReading.waitForDataInBackgroundAndNotify()
-        NotificationCenter.default.addObserver(forName: NSNotification.Name.NSFileHandleDataAvailable, object: outputPipe.fileHandleForReading, queue: nil, using: { (notification) in
+        
+        // remove any existing observers before adding a new one
+        if let observer = self.outputObserver {
+            NotificationCenter.default.removeObserver(observer)
+        }
+        
+        self.outputObserver = NotificationCenter.default.addObserver(forName: NSNotification.Name.NSFileHandleDataAvailable, object: outputPipe.fileHandleForReading, queue: nil, using: { (notification) in
             let output = outputPipe.fileHandleForReading.availableData
             let outputString = String(data: output, encoding: String.Encoding.utf8) ?? ""
             
