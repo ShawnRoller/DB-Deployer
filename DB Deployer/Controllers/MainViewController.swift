@@ -35,6 +35,7 @@ class MainViewController: NSViewController {
         }
     }
     var outputObserver: Any? = nil
+    var prefsObserver: Any? = nil
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -54,9 +55,16 @@ class MainViewController: NSViewController {
         self.isRunning = false
         
         // setup listener in case the prefs change
-        NotificationCenter.default.addObserver(self, selector: #selector(updatePrefs(_:)), name: NSNotification.Name(rawValue: Constants.prefsChanged), object: nil)
+        self.prefsObserver = NotificationCenter.default.addObserver(self, selector: #selector(updatePrefs(_:)), name: NSNotification.Name(rawValue: Constants.prefsChanged), object: nil)
 
         self.show(preferences: self.preferences)
+    }
+    
+    override func viewDidDisappear() {
+        super.viewDidDisappear()
+        if let observer = self.prefsObserver {
+            NotificationCenter.default.removeObserver(observer)
+        }
     }
     
     @objc func updatePrefs(_ sender: Any) {
