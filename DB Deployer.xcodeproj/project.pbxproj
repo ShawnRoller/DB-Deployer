@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		290123F42900910500B394BE /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 290123F32900910500B394BE /* main.swift */; };
 		295161E322775987009F9408 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 295161E222775987009F9408 /* AppDelegate.swift */; };
 		295161E522775987009F9408 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 295161E422775987009F9408 /* MainViewController.swift */; };
 		295161E722775988009F9408 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 295161E622775988009F9408 /* Assets.xcassets */; };
@@ -21,8 +22,23 @@
 		29A1C1652280755D003A5DCC /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 295161EB22775988009F9408 /* Info.plist */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXCopyFilesBuildPhase section */
+		290123EF2900910500B394BE /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = /usr/share/man/man1/;
+			dstSubfolderSpec = 0;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 1;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
 		290123EC29008BD200B394BE /* DB Deployer.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "DB Deployer.entitlements"; sourceTree = "<group>"; };
+		290123F12900910500B394BE /* SqlCmdX */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = SqlCmdX; sourceTree = BUILT_PRODUCTS_DIR; };
+		290123F32900910500B394BE /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
+		290123F82900916A00B394BE /* SqlCmdX.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = SqlCmdX.entitlements; sourceTree = "<group>"; };
 		295161DF22775987009F9408 /* Mega Deployer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Mega Deployer.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		295161E222775987009F9408 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		295161E422775987009F9408 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
@@ -41,6 +57,13 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		290123EE2900910500B394BE /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		295161DC22775987009F9408 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -51,10 +74,20 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		290123F22900910500B394BE /* SqlCmdX */ = {
+			isa = PBXGroup;
+			children = (
+				290123F82900916A00B394BE /* SqlCmdX.entitlements */,
+				290123F32900910500B394BE /* main.swift */,
+			);
+			path = SqlCmdX;
+			sourceTree = "<group>";
+		};
 		295161D622775987009F9408 = {
 			isa = PBXGroup;
 			children = (
 				295161E122775987009F9408 /* DB Deployer */,
+				290123F22900910500B394BE /* SqlCmdX */,
 				295161E022775987009F9408 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -63,6 +96,7 @@
 			isa = PBXGroup;
 			children = (
 				295161DF22775987009F9408 /* Mega Deployer.app */,
+				290123F12900910500B394BE /* SqlCmdX */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -116,6 +150,23 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		290123F02900910500B394BE /* SqlCmdX */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 290123F52900910500B394BE /* Build configuration list for PBXNativeTarget "SqlCmdX" */;
+			buildPhases = (
+				290123ED2900910500B394BE /* Sources */,
+				290123EE2900910500B394BE /* Frameworks */,
+				290123EF2900910500B394BE /* CopyFiles */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = SqlCmdX;
+			productName = SqlCmdX;
+			productReference = 290123F12900910500B394BE /* SqlCmdX */;
+			productType = "com.apple.product-type.tool";
+		};
 		295161DE22775987009F9408 /* DB Deployer */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 295161EF22775988009F9408 /* Build configuration list for PBXNativeTarget "DB Deployer" */;
@@ -139,10 +190,13 @@
 		295161D722775987009F9408 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastSwiftUpdateCheck = 1020;
+				LastSwiftUpdateCheck = 1340;
 				LastUpgradeCheck = 1020;
 				ORGANIZATIONNAME = "Shawn Roller";
 				TargetAttributes = {
+					290123F02900910500B394BE = {
+						CreatedOnToolsVersion = 13.4.1;
+					};
 					295161DE22775987009F9408 = {
 						CreatedOnToolsVersion = 10.2.1;
 						SystemCapabilities = {
@@ -167,6 +221,7 @@
 			projectRoot = "";
 			targets = (
 				295161DE22775987009F9408 /* DB Deployer */,
+				290123F02900910500B394BE /* SqlCmdX */,
 			);
 		};
 /* End PBXProject section */
@@ -186,6 +241,14 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		290123ED2900910500B394BE /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				290123F42900910500B394BE /* main.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		295161DB22775987009F9408 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -215,6 +278,42 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
+		290123F62900910500B394BE /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CODE_SIGN_ENTITLEMENTS = SqlCmdX/SqlCmdX.entitlements;
+				CODE_SIGN_INJECT_BASE_ENTITLEMENTS = NO;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = EWH85CQYYJ;
+				ENABLE_HARDENED_RUNTIME = YES;
+				OTHER_CODE_SIGN_FLAGS = "$(inherited) -i $(PRODUCT_BUNDLE_IDENTIFIER)";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.offensively-bad.DB-Deployer.SqlCmdX";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 5.0;
+			};
+			name = Debug;
+		};
+		290123F72900910500B394BE /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CODE_SIGN_ENTITLEMENTS = SqlCmdX/SqlCmdX.entitlements;
+				CODE_SIGN_INJECT_BASE_ENTITLEMENTS = NO;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = EWH85CQYYJ;
+				ENABLE_HARDENED_RUNTIME = YES;
+				OTHER_CODE_SIGN_FLAGS = "$(inherited) -i $(PRODUCT_BUNDLE_IDENTIFIER)";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.offensively-bad.DB-Deployer.SqlCmdX";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 5.0;
+			};
+			name = Release;
+		};
 		295161ED22775988009F9408 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -339,7 +438,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				DEVELOPMENT_TEAM = EWH85CQYYJ;
-				ENABLE_HARDENED_RUNTIME = NO;
+				ENABLE_HARDENED_RUNTIME = YES;
 				INFOPLIST_FILE = "DB Deployer/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -363,7 +462,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				DEVELOPMENT_TEAM = EWH85CQYYJ;
-				ENABLE_HARDENED_RUNTIME = NO;
+				ENABLE_HARDENED_RUNTIME = YES;
 				INFOPLIST_FILE = "DB Deployer/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -381,6 +480,15 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		290123F52900910500B394BE /* Build configuration list for PBXNativeTarget "SqlCmdX" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				290123F62900910500B394BE /* Debug */,
+				290123F72900910500B394BE /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		295161DA22775987009F9408 /* Build configuration list for PBXProject "DB Deployer" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
