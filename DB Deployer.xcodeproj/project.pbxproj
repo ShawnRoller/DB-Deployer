@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		290123F42900910500B394BE /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 290123F32900910500B394BE /* main.swift */; };
+		290123FC2900943D00B394BE /* SqlCmdX in Embed Helper Tools */ = {isa = PBXBuildFile; fileRef = 290123F12900910500B394BE /* SqlCmdX */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
 		295161E322775987009F9408 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 295161E222775987009F9408 /* AppDelegate.swift */; };
 		295161E522775987009F9408 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 295161E422775987009F9408 /* MainViewController.swift */; };
 		295161E722775988009F9408 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 295161E622775988009F9408 /* Assets.xcassets */; };
@@ -22,6 +23,16 @@
 		29A1C1652280755D003A5DCC /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 295161EB22775988009F9408 /* Info.plist */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXContainerItemProxy section */
+		290123F92900933600B394BE /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 295161D722775987009F9408 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 290123F02900910500B394BE;
+			remoteInfo = SqlCmdX;
+		};
+/* End PBXContainerItemProxy section */
+
 /* Begin PBXCopyFilesBuildPhase section */
 		290123EF2900910500B394BE /* CopyFiles */ = {
 			isa = PBXCopyFilesBuildPhase;
@@ -31,6 +42,17 @@
 			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 1;
+		};
+		290123FB2900934600B394BE /* Embed Helper Tools */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 6;
+			files = (
+				290123FC2900943D00B394BE /* SqlCmdX in Embed Helper Tools */,
+			);
+			name = "Embed Helper Tools";
+			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXCopyFilesBuildPhase section */
 
@@ -174,10 +196,12 @@
 				295161DB22775987009F9408 /* Sources */,
 				295161DC22775987009F9408 /* Frameworks */,
 				295161DD22775987009F9408 /* Resources */,
+				290123FB2900934600B394BE /* Embed Helper Tools */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				290123FA2900933600B394BE /* PBXTargetDependency */,
 			);
 			name = "DB Deployer";
 			productName = "DB Deployer";
@@ -265,6 +289,14 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		290123FA2900933600B394BE /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 290123F02900910500B394BE /* SqlCmdX */;
+			targetProxy = 290123F92900933600B394BE /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		295161E822775988009F9408 /* Main.storyboard */ = {
